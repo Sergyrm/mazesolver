@@ -1,21 +1,18 @@
-from point_line import Point, Line
+from window import Line, Point
 
 
-class Cell():
-
+class Cell:
     def __init__(self, win=None):
-        
-        self.visited = False
         self.has_left_wall = True
         self.has_right_wall = True
         self.has_top_wall = True
         self.has_bottom_wall = True
+        self.visited = False
         self._x1 = None
         self._x2 = None
         self._y1 = None
         self._y2 = None
         self._win = win
-
 
     def draw(self, x1, y1, x2, y2):
         if self._win is None:
@@ -49,7 +46,6 @@ class Cell():
             line = Line(Point(x1, y2), Point(x2, y2))
             self._win.draw_line(line, "white")
 
-
     def draw_move(self, to_cell, undo=False):
         half_length = abs(self._x2 - self._x1) // 2
         x_center = half_length + self._x1
@@ -65,4 +61,3 @@ class Cell():
 
         line = Line(Point(x_center, y_center), Point(x_center2, y_center2))
         self._win.draw_line(line, fill_color)
-    

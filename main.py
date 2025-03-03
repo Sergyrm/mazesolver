@@ -1,5 +1,4 @@
-from window import Window
-from point_line import Point, Line
+from window import Window, Point, Line
 from cell import Cell
 from maze import Maze
 
